@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script type = "text/javascript">
-        function touchRock() {
-            var userName = prompt('Enter your name, please');
-            
-            if (userName) {
-                alert('Nice to meet you,' + userName + '!');
-                document.getElementById("rock_img").src = "images/rock_three.jpg";
-            }
+        function greetUser() {
+            alert('Hello, I\'m your pet rock!');
         }
+        function resizeRock() {
+            document.getElementById('rock_img').style.height = 
+                (document.body.clientHeight - 100) * 0.9;
+        }
+        function touchRock() {
+           var userName= prompt('Enter your name, please');
+            if (userName) alert('Nice to meet you, ' + userName + '!');
+            document.getElementById("rock_img").src = "images/rock_three.jpg";
+        }
+        
+        setTimeout("document.getElementById('rock_img').src = 'images/rock_four.jpg';", 1*60*1000);
     </script>
 </head>
-<body onload="alert('Hello, I\'m your pet rock');">
+<body onload="greetUser(), resizeRock()">
     <div style="margin-top: 100px; text-align: center">
-        <img id="rock_img" src="images/rock_four.jpg" alt="rock" style="cursor: pointer" 
+        <img id="rock_img" src="images/rock_one.jpg" alt="rock" style="cursor: pointer" 
         onclick="touchRock();">
     </div>
 </body>
